@@ -109,3 +109,10 @@ Copying and distribution of this file, with or without modification,
 are permitted in any medium without royalty provided the copyright
 notice and this notice are preserved.  This file is offered as-is,
 without any warranty.
+
+######################################################################
+
+Why I forked this
+=================
+
+I forked this to tweak for the purposes of Platypus OS.
