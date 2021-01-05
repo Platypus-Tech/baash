@@ -115,4 +115,6 @@ without any warranty.
 Why I forked this
 =================
 
-I forked this to tweak for the purposes of Platypus OS.
+I forked this to tweak for the purposes of Platypus OS. You may be wondering 
+why it's called "baash". It's called "baash" because BASH originally stood 
+for Bourne-Again SHell. Baash stands for Bourne-Again-Again SHell. Why not?
