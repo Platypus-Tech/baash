@@ -6412,6 +6412,13 @@ command_substitute (string, quoted, flags)
       /* The currently executing shell is not interactive. */
       interactive = 0;
 
+#if defined (JOB_CONTROL)
+      /* Invariant: in child processes started to run command substitutions,
+	 pipeline_pgrp == shell_pgrp. Other parts of the shell assume this. */
+      if (pipeline_pgrp > 0 && pipeline_pgrp != shell_pgrp)
+	shell_pgrp = pipeline_pgrp;
+#endif
+
       set_sigint_handler ();	/* XXX */
 
       free_pushed_string_input ();
@@ -11673,6 +11680,8 @@ expand_compound_assignment_word (tlist, flags)
   free (value);
 
   value = string_list (l);
+  dispose_words (l);
+
   wlen = STRLEN (value);
 
   /* Now, let's rebuild the string */
